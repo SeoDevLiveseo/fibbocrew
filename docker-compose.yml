@@ -1,0 +1,16 @@
+services:
+  backend:
+    container_name: workshop_crewai
+    image: liveseo/crewai
+    volumes:
+      - ./:/app
+    # command: sh -c "tail -f /dev/null"
+    command: >
+      bash -c "
+      pip install crewai --upgrade &&
+      tail -f /dev/null"
+    environment:
+      - MODEL=${MODEL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AGENTOPS_API_KEY=${AGENTOPS_API_KEY}

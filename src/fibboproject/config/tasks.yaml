@@ -1,0 +1,16 @@
+  buscar_e_filtrar_dados:
+    description: >
+      Receber a pergunta do usuário: {input}.
+      Validar as informações fornecidas, buscar na base de dados, filtrar os resultados relevantes 
+      e garantir que os dados estejam corretos, precisos e organizados.
+    expected_output: >
+      Um conjunto de dados filtrados e validados, pronto para interpretação.
+    agent: consultor
+
+  interpretar_e_criar_mensagem:
+    description: >
+      Receber os dados validados e filtrados, interpretar as informações e criar uma mensagem clara e objetiva
+      que seja adequada para o retorno ao usuário, considerando o contexto e a necessidade da solicitação.
+    expected_output: >
+      Uma mensagem estruturada e persuasiva que comunique as informações de forma clara e eficiente.
+    agent: mensageiro
