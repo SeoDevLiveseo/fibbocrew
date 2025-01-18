@@ -8,8 +8,8 @@ from crewai.knowledge.source.csv_knowledge_source import CSVKnowledgeSource
 
 
 # Create a CSV knowledge source
-csv_source = CSVKnowledgeSource(
-    file_paths=["cliente-uniasselvi_.csv"]
+csv_sources = CSVKnowledgeSource(
+    file_paths=["base-teste.csv"]
 )
 
 
@@ -29,14 +29,19 @@ class Fibboproject():
 	def consultor(self) -> Agent:
 		return Agent(
 			config=self.agents_config['consultor'],
-			verbose=True
+			verbose=True,
+			memory=False,
+			cache=False
+
 		)
 
 	@agent
 	def mensageiro(self) -> Agent:
 		return Agent(
 			config=self.agents_config['mensageiro'],
-			verbose=True
+			verbose=True,
+			memory=False,
+			cache=False
 		)
 
 	# To learn more about structured task outputs, 
@@ -66,7 +71,7 @@ class Fibboproject():
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
 			verbose=True,
-			knowledge_sources=[csv_source],
+			knowledge_sources=[csv_sources],
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 			embedder={
 				"provider": "google",

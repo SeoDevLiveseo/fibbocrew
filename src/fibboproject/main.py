@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
+import agentops
 
 from fibboproject.crew import Fibboproject
 
@@ -11,12 +12,15 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
+
+agentops.init("51522d5d-5888-4434-982b-0932198f1c06")
+
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'input': 'Quais são as atividades que orçaram entre 4 e 6 horas'
+        'input': 'Quantas tarefas e quantidade de horas orçadas para o mes de maio de 2025'
     }
     Fibboproject().crew().kickoff(inputs=inputs)
 

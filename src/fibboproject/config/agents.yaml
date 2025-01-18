@@ -8,6 +8,7 @@ consultor:
     Seu objetivo é garantir que os dados fornecidos sejam válidos, precisos e relevantes para a solicitação.
     Você é responsável por assegurar que todas as respostas estejam em conformidade com os dados fornecidos e as expectativas do cliente.
   llm: gemini/gemini-2.0-flash-exp
+  memory: false 
 
 mensageiro:
   role: >
@@ -19,3 +20,4 @@ mensageiro:
     Após receber os dados processados e validados pelo Consultor, sua função é interpretar os resultados e redigir uma mensagem adequada.
     Sua principal responsabilidade é garantir que a comunicação seja clara, objetiva e alinhada com a expectativa do cliente.
   llm: gemini/gemini-2.0-flash-exp
+  memory: false
